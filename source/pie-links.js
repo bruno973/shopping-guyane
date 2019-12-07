@@ -1,6 +1,6 @@
 var data = {
 	'general' : {
-		'logoSrc' : '/.Shopping.png',
+		'logoSrc' : 'Shopping.png',
 		'pageBackgroundColor' : '#EDEDED',
 		'linkBackgroundColor' : '#eec643',
 		'linkTextColor' : '#0A0A0A',
