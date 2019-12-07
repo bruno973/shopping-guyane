@@ -1,34 +1,35 @@
 var data = {
 	'general' : {
-		'logoSrc' : './logo.png',
+		'logoSrc' : './shopping.png',
 		'pageBackgroundColor' : '#EDEDED',
 		'linkBackgroundColor' : '#eec643',
 		'linkTextColor' : '#0A0A0A',
 		'searchState' : 'active',
-		'searchInputPlaceholder' : 'Search...',
-		'noResultNotice' : 'No results...'
+		'searchInputPlaceholder' : 'Recherche...',
+		'noResultNotice' : 'Pas de résultats...'
 	},
 	'links' : [
 		{
-			'name' : "Facebook",
-			'url' : "https://facebook.com",
+			'name' : "Aliexpress",
+			'url' : "https://rebrand.ly/aliexpress973",
 			'openUrlType' : 'new',
-			'searchTerms': ['facebook','social media','one']
+			'searchTerms': ['Aliexpress','aliexpress','Alie','Ali','ali']
 		},
 		{
-			'name' : "Instagram",
-			'url' : "https://instagram.com",
-			'openUrlType' : 'self',
-			'searchTerms': ['instagram','social media','two']
+			'name' : "Brand Alley",
+			'url' : "https://rebrand.ly/Brand-Alley",
+			'openUrlType' : 'new',
+			'searchTerms': ['Brand','Brandalley','BrandAlley','brandalley','Brand Alley','brand alley']
 		},
 		{
-			'name' : "Website",
-			'url' : "https://website.com",
-			'openUrlType' : 'self',
-			'searchTerms': ['Website','three']
+			'name' : "Gagner des € en répondant à des enquêtes",
+			'url' : "https://rebrand.ly/tns-sofres",
+			'openUrlType' : 'new',
+			'searchTerms': ['TNS','tns','euros','€']
 		}
 	]
 };
+
 
 window.onload = function() {
 	generateCSS();
@@ -59,6 +60,8 @@ function createLinks() {
 
 function search_form() {
 	var searchKeyword = document.getElementById("search_form").value;
+		searchKeyword = searchKeyword.toLowerCase();
+		
 	if (searchKeyword == "") {
 		createLinks();
 	} else {
@@ -66,6 +69,7 @@ function search_form() {
 		var countLinks = 0;
 		for (i in data.links) {
 			for (j in data.links[i].searchTerms) {
+				
 				if (data.links[i].searchTerms[j].indexOf(searchKeyword) > -1) {
 					htmlLinkspielinkss += '<a';
 					if (data.links[i].openUrlType == 'new') {
